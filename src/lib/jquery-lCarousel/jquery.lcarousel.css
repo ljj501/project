@@ -1,0 +1,20 @@
+.lcarousel{position:relative;width: 224px;height: 288px;overflow: hidden;}
+.lcarousel ul{position:absolute;left:0;top:0;overflow: hidden;}
+.lcarousel ul.horizontal li{float:left;}
+.lcarousel ul.fade li{position: absolute;top:0;left:0}
+.lcarousel img{display:block;}
+.lcarousel .page{position:absolute;;left:50%;bottom:10px;transform: translateX(-50%);}
+.lcarousel .page span{display:inline-block;width: 20px;height: 20px;overflow: hidden;background: #000;opacity:.7;border-radius: 15px;margin:0 7px;color:#fff;text-align: center;line-height: 20px;}
+.lcarousel .page span.active{background: red;}
+.lcarousel .page span:hover{cursor:pointer;}
+.lcarousel > span{position: absolute;top:50%;left:185px;transform:translate(0,-50%);width:37px;height:60px;line-height:60px;text-align:center;background-color: rgba(0,0,0,.3);color:#fff;}
+.lcarousel > span:hover{cursor:pointer;background-color:#000;opacity:.6;}
+.lcarousel .btn-next{left:auto;right:190px;}
+
+
+/*
+小图
+ */
+.lcarousel .small{position:absolute;bottom:0;left:50%;transform:translate(-50%,0);height:40px;overflow: hidden;}
+.lcarousel .small li{float:left;}
+.lcarousel .small img{width:40px;}

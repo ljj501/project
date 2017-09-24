@@ -1,7 +1,7 @@
 ;(function($){
 	// $.xCarousel = function(){}
 	// $.prototype.xCarousel = function(options){}
-	$.fn.xCarousel = function(options){
+	$.fn.lCarousel = function(options){
 		// 属性
 		var defaults = {
 			// 宽高
@@ -21,7 +21,7 @@
 			showPage:false,
 
 			// 播放间隔
-			duration:3000,
+			duration:2000,
 
 			// 轮播类型：fade:淡入淡出, vertial:垂直滚动, horizontal:水平滚动, show:幻灯片
 			type:'vertical',
@@ -51,7 +51,7 @@
 					$this.append($ul);
 
 					// 添加插件样式
-					$this.addClass('xcarousel');
+					$this.addClass('lcarousel');
 					$ul.addClass(opt.type);
 					if(opt.type === 'horizontal'){
 						$ul.width(opt.width*opt.imgs.length);
@@ -76,6 +76,13 @@
 						var page_html = '<span></span>'.repeat(opt.imgs.length);
 						$page.html(page_html);
 
+						
+						var $spans = $page.children();
+						for(var i=0;i<$page.children().length;i++){
+							
+							$page.children().eq(i).html(i+1);
+							
+						}
 						// 当前分页添加高亮
 						// $page.children().eq(opt.index).addClass('active');
 
