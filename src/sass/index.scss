@@ -7,7 +7,26 @@
     height:30px;
     font-size:13px;
     font-family:"宋体";
-    .left{float:left;}
+    .left{
+        img{transition:all 1s;}
+        float:left;position:relative;
+        &:hover .ewm{display:block;}
+        &:hover{cursor:pointer;}
+        &:hover img{transform:rotateZ(180deg)}
+        &:hover strong{transform:rotateZ(180deg);}
+        strong{display:inline-block;height:30px;line-height:35px;
+            transition:all 1s;vertical-align:bottom;}
+        .ewm{
+            z-index:9999;display:none;
+            position:absolute;top:36px;left:0;background:#fff;
+            padding:4px;box-shadow:0 0 3px rgba(0,0,0,0.6);
+            .sanjiaon{
+                position:absolute;left:5px;top:-5px;width:16px;height:16px;
+                text-align:center;font-size:16px;line-height:16px;color:#fff;
+            }
+            img{width:200px;height:200px;}
+        }
+    }
     .right{
         float:right;
         li{
@@ -97,6 +116,7 @@
     font-size: 15px;
     a{color: #333;}
     .list{
+        li:nth-child(3){background:url(../images/hoticon.gif)}
         .listnav{
                 font-size:18px;
                 width:185px;
@@ -107,18 +127,93 @@
                 text-align:center;
                 >a{color:#fff;}
                 >a:hover{color:#fff;}
+
+
                 //二级导航
                 .kind{
                      position: absolute;
                         top: 45px;
                         left: 0;
+                    li:hover .box{display:block;}
                     li{
                         width: 145px;
                         height: 47px;
                         background: rgba(204, 2, 16, .9);
                         padding: 0 20px;
                         position: relative;
-                        a{
+                        .box{
+                            width:1020px;
+                            height:470px;
+                            position:absolute;
+                            background:#fff;
+                            left:185px;
+                            top:0;
+                            display:none;
+                            border-top:1px solid #e5e5e5;
+                            .box-lt{
+
+                                a{
+                                    color:#000;float:left;
+                                    padding:0 10px;
+                                    border-right:1px solid #bfbfbf;
+                                    font-size:14px;
+                                    line-height:15px;
+        
+                                }
+                                width:730px;
+                                padding-left:10px;
+                                height:425px;
+                                .long{
+                                    width:80%;
+                                    margin:15px 35px 0;
+                                    float:left;
+                                    height:121px;
+                                    p{
+                                        width:100%;
+                                        height:40px;
+                                        font-size:14px;
+                                        border-bottom:1px solid #eaeaea;
+                                        text-align:left;
+                                        color:#3b3b3b;
+                                        font-weight:900;
+                                    }
+                                    .list-msg{
+                                        padding-top:20px;
+                                    }
+                                }
+                                .short{
+                                    width:40%;
+                                    margin:15px 35px 0;
+                                    float:left;
+                                    height:121px;
+                                    p{
+                                        width:100%;
+                                        height:40px;
+                                        font-size:14px;
+                                        border-bottom:1px solid #eaeaea;
+                                        text-align:left;
+                                        color:#3b3b3b;
+                                        font-weight:900;
+                                    }
+                                    .list-msg{
+                                        padding-top:20px;
+                                    }
+                                }
+                            }
+                            .box-rt{
+                                width:280px;
+                                height:470px;
+                                background:#f6f6f6;
+                                padding:19px 17px;
+                                box-sizing:border-box;
+                                .logo{
+                                    border:1px solid #eaeaea;
+                                    width:242px;
+                                    a{float:left;height:80px;}
+                                }
+                            }
+                        }
+                        >a{
                             color:#fff;font-size:16px;
                             width: 146px;
                             text-align: left;
@@ -230,7 +325,7 @@
 }
 .copyright{
     padding-top:83px;
-    height:204px;
+    height:121px;
     background:url(../images/baozheng_06.jpg) center top no-repeat;
     line-height:24px;
     p{text-align:center;margin-bottom:10px;}
@@ -238,7 +333,7 @@
     .box{
         height:32px;overflow:hidden;position:relative;
         ul{
-            position:absolute;top:0;
+            position:absolute;
             li{
                 padding:10px;
                 text-align:center;
@@ -252,5 +347,102 @@
 
             }
         }
+    }
+}
+
+.rightFixedBar{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 32px;
+    height: 100%;
+    background: #eaeaea;
+    z-index: 10003;
+    text-align: center;
+    color: #fff;
+    .inner{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -216px;
+        width: 32px;
+        height: 432px;
+        
+        .iconBox{
+            padding:10px 0;
+            border-bottom:1px solid #c8c8c8;
+            color:#c40000;
+        }
+        .iconBox:hover{background:#c40000;color:#fff;}
+        .iconBox:hover .iconfont{color:#fff;}
+        .space{
+           .iconBox{
+            margin-top:70px;
+           }
+        }
+        >a{position:relative;cursor:pointer;}
+        >.pit{position:relative;}
+        //淡入
+        .iconBox_tips{
+            display:none;
+            right:80px;
+            width:108px;
+            height:40px;
+            line-height:40px;
+            background:#494949;
+            opacity:0;
+            top:-40px;
+            font-size:12px;
+            position:absolute;
+            text-align:center;
+            color:#fff;
+            .tips_arrow{
+                position:absolute;
+                right:-8px;
+                top:12px;
+                width:16px;
+                height:16px;
+                line-height:16px;
+                font-size:16px;
+                color:#494949;
+                text-align:center;
+            }
+        }
+        .tips_qrcode{
+            display:none;
+            position:absolute;
+            top:0;
+            right:90px;
+            .tips_arrow{
+                position:absolute;
+                right:-8px;
+                top:12px;
+                width:16px;
+                height:16px;
+                line-height:16px;
+                font-size:26px;
+                color:#fff;
+                text-align:center;
+            }
+        }
+        .tips_zan{
+            display:none;
+             position:absolute;
+            top:0;
+            right:90px;
+            border:10px solid #fff;
+            .tips_arrow{
+                position:absolute;
+                right:-18px;
+                top:3px;
+                width:16px;
+                height:16px;
+                line-height:16px;
+                font-size:26px;
+                color:#fff;
+                text-align:center;  
+            }
+        }
+
     }
 }

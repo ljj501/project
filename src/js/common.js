@@ -1,36 +1,27 @@
 /* 
 * @Author: Marte
-* @Date:   2017-09-23 16:25:24
+* @Date:   2017-09-25 20:12:31
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-09-25 21:17:03
+* @Last Modified time: 2017-09-25 21:19:07
 */
-require.config({
-    // baseUrl:
-    
-    // 配置短路径（别名）
-    paths:{
-        jquery:'../lib/jquery-3.1.1',
-        lcarousel:'../lib/jquery-lCarousel/jquery.lcarousel',
-    },
 
-    // 配置依赖
-    shim:{
-        // xcarousel依赖jquery
-        lcarousel:['jquery']
-    }
-});
-require(['jquery','lcarousel'],function($){
-    //轮播图
-    $('.carousel .container').lCarousel({
-        imgs:['../images/b1.jpg','../images/b2.jpg','../images/b3.jpg','../images/b4.jpg','../images/b5.jpg','../images/b6.jpg','../images/b7.jpg','../images/b8.jpg',],
-        type:'fade',
-        width:1200,
-        height:470,
-        showPage:true
-    });
+(function($){
+    //底部滚动
+    var $ul =  $('.copyright .box ul');
+    var i=0;
+    setInterval(function(){
+        i++;
+        if(i>=2){
+            i=0;
+        }
+        $ul.animate({top:-36*i})
 
-    $('.rightFixedBar').on('mouseenter','a',function(){
-       
+    },2000)
+    //右侧固定栏淡入淡出
+   setTimeout(function(){
+
+        $('#footer .rightFixedBar').on('mouseenter','a',function(){
+        console.log(666)
             var $box=$(this).find('.iconBox_tips')
             $box.css({'display':'block'});
             $box.stop().animate({'right':15,opacity:1})
@@ -41,7 +32,7 @@ require(['jquery','lcarousel'],function($){
             })
         })
 
-        $pit = $('.rightFixedBar').find('.pit')
+        $pit = $('#footer .rightFixedBar').find('.pit')
         $pit.on('mouseenter',function(){
             var $ewm = $(this).find('.tips_qrcode')
             $ewm.css({'display':'block'});
@@ -64,7 +55,7 @@ require(['jquery','lcarousel'],function($){
         
        //返回顶部
       
-       $('.rightFixedBar .to-top').on('click',function(){
+       $('#footer .rightFixedBar .to-top').on('click',function(){
             let speed = 10;
             let timer = setInterval(()=>{
                         
@@ -81,5 +72,5 @@ require(['jquery','lcarousel'],function($){
                 window.scrollTo(0,scrollTop);
             },30);
        })
-});
-
+   },1000)
+})(jQuery);
