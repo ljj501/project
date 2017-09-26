@@ -2,24 +2,26 @@
 * @Author: Marte
 * @Date:   2017-09-25 20:12:31
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-09-25 21:19:07
+* @Last Modified time: 2017-09-26 19:33:14
 */
 
 (function($){
-    //底部滚动
-    var $ul =  $('.copyright .box ul');
-    var i=0;
-    setInterval(function(){
-        i++;
-        if(i>=2){
-            i=0;
-        }
-        $ul.animate({top:-36*i})
-
-    },2000)
-    //右侧固定栏淡入淡出
+   
    setTimeout(function(){
+        //底部滚动
+        var $ul =  $('#footer .copyright .box ul');
+        console.log($ul)
+        var i=0;
+        setInterval(function(){
+            i++;
+            if(i>=2){
+                i=0;
+            }
+            $ul.animate({top:-36*i})
 
+        },2000)
+    
+         //右侧固定栏淡入淡出
         $('#footer .rightFixedBar').on('mouseenter','a',function(){
         console.log(666)
             var $box=$(this).find('.iconBox_tips')

@@ -121,7 +121,7 @@
 					
 
 					// 点击页码
-					$this.on('click','.page span',function(){
+					$this.on('mouseover','.page span',function(){
 						opt.index = $(this).index();
 						carousel.move();
 					})

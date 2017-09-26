@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2017-09-23 16:25:24
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-09-25 21:17:03
+* @Last Modified time: 2017-09-26 20:43:50
 */
 require.config({
     // baseUrl:
@@ -28,7 +28,20 @@ require(['jquery','lcarousel'],function($){
         height:470,
         showPage:true
     });
+            //底部滚动
+    var $move =  $('.copyright').find('ul');
+    var i=0;
+    setInterval(function(){
+        i++;
+        if(i>=2){
+            i=0;
+        }
+        $move.animate({'top':-36*i})
 
+    },2000)
+
+
+    //右侧固定拦
     $('.rightFixedBar').on('mouseenter','a',function(){
        
             var $box=$(this).find('.iconBox_tips')
@@ -81,5 +94,37 @@ require(['jquery','lcarousel'],function($){
                 window.scrollTo(0,scrollTop);
             },30);
        })
+
+       //hover上升
+       $('.content').on('mouseover','li',function(){
+            $(this).stop().animate({'top':-5});
+            $(this).css({'box-shadow':'0px 9px 40px #ccc'})
+       }).on('mouseout','li',function(){
+            $(this).stop().animate({'top':0});
+            $(this).css({'box-shadow':'0 0 0'});
+       })
+      $a=$('.content').find('.fl')
+      $a.on('mouseover',function(){
+            $(this).stop().animate({'top':-5});
+      }).on('mouseout',function(){
+            $(this).stop().animate({'top':0});
+      })
+
+      //店家推荐  点击滑动
+      $next =$('.dztj').find('.next');
+      $prev =$('.dztj').find('.prev');
+      $ul = $('.dztj').find('ul');
+      $next.on('click',function(){
+            $ul.animate({'left':-1220});
+            $prev.css({'color':'#333','border':'1px solid #333'})
+            $(this).css({'color':'#ccc','border':'1px solid #ccc'})
+      })
+      $prev.on('click',function(){
+            $ul.animate({'left':0});
+            $next.css({'color':'#333','border':'1px solid #333'})
+            $(this).css({'color':'#ccc','border':'1px solid #ccc'})
+      })
+
+ 
 });
 
