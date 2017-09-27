@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2017-09-25 20:12:31
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-09-26 19:33:14
+* @Last Modified time: 2017-09-27 16:35:23
 */
 
 (function($){
@@ -10,7 +10,7 @@
    setTimeout(function(){
         //底部滚动
         var $ul =  $('#footer .copyright .box ul');
-        console.log($ul)
+       
         var i=0;
         setInterval(function(){
             i++;
@@ -23,7 +23,7 @@
     
          //右侧固定栏淡入淡出
         $('#footer .rightFixedBar').on('mouseenter','a',function(){
-        console.log(666)
+     
             var $box=$(this).find('.iconBox_tips')
             $box.css({'display':'block'});
             $box.stop().animate({'right':15,opacity:1})

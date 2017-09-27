@@ -23,7 +23,7 @@
 * @Author: Marte
 * @Date:   2017-09-23 11:27:19
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-09-23 15:33:59
+* @Last Modified time: 2017-09-27 10:24:00
 */
 var gulp = require('gulp');
 var sass = require('gulp-sass');
@@ -36,7 +36,7 @@ gulp.task('serve', ['sass'], function() {
         server: "./src"
     });
     gulp.watch("src/sass/*.scss", ['sass']);
-    gulp.watch("src/*.html").on('change', reload);
+    gulp.watch("src/**/*.html").on('change', reload);
 });
 
 // scss编译后的css将注入到浏览器里实现更新

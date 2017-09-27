@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2017-09-23 16:25:24
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-09-26 20:43:50
+* @Last Modified time: 2017-09-27 09:48:43
 */
 require.config({
     // baseUrl:
@@ -40,6 +40,17 @@ require(['jquery','lcarousel'],function($){
 
     },2000)
 
+    //吸顶
+    var $fixedSch_box=$('.content .fixedSch_box');
+    $(window).scroll(function(){
+
+        let currentTop = window.scrollY;
+        if(currentTop>1200){
+            $fixedSch_box.css({'display':'block'});
+        }else{
+             $fixedSch_box.css({'display':'none'});
+        }
+    })
 
     //右侧固定拦
     $('.rightFixedBar').on('mouseenter','a',function(){

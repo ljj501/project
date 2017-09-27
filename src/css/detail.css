@@ -1,0 +1,109 @@
+@charset "UTF-8";
+.content .searchbox {
+  font-size: 12px;
+  width: 1180px;
+  height: auto;
+  color: #848484;
+  font-family: 微软雅黑;
+  background: white;
+  margin: 0px auto; }
+  .content .searchbox .tit {
+    color: #333333;
+    font-family: 微软雅黑;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    text-indent: 10px;
+    border-bottom: 1px dashed #d4d4d4; }
+    .content .searchbox .tit strong {
+      color: #dd3f45; }
+  .content .searchbox .hassel {
+    height: 40px;
+    width: 100%;
+    font-size: 12px;
+    border-bottom: 1px dashed #D4D4D4;
+    line-height: 41px; }
+    .content .searchbox .hassel .hassel-tit {
+      margin-right: 30px;
+      font-size: 12px; }
+    .content .searchbox .hassel .selected {
+      height: 23px;
+      border: 1px solid #D4D4D4;
+      margin-top: 7px;
+      color: #333333;
+      line-height: 22px;
+      padding-left: 5px;
+      padding-right: 5px;
+      cursor: pointer;
+      display: block;
+      color: #DD3F45; }
+      .content .searchbox .hassel .selected span {
+        background: #DD3F45;
+        color: #FFFFFF;
+        padding-left: 4px;
+        padding-right: 4px; }
+  .content .searchbox .cd {
+    width: 100%;
+    border-bottom: 1px dashed #D4D4D4; }
+    .content .searchbox .cd .cd-tit {
+      line-height: 32px;
+      width: 77px; }
+    .content .searchbox .cd .cd-table {
+      height: auto;
+      width: 1000px;
+      padding: 3px 0; }
+      .content .searchbox .cd .cd-table li a {
+        display: block;
+        float: left;
+        margin-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        color: #848484;
+        padding-bottom: 5px;
+        padding-top: 5px; }
+      .content .searchbox .cd .cd-table li:hover a {
+        color: #fff;
+        background: #DD3F45; }
+  .content .searchbox .gdxx {
+    width: 100%;
+    height: 65px; }
+    .content .searchbox .gdxx .gdxx-tit {
+      line-height: 65px;
+      width: 87px; }
+    .content .searchbox .gdxx .gdxx-table li {
+      width: 98px;
+      height: 28px;
+      text-align: center;
+      line-height: 30px;
+      float: left;
+      border: 1px solid #D4D4D4;
+      border-right: none;
+      margin-top: 18px;
+      cursor: pointer; }
+      .content .searchbox .gdxx .gdxx-table li:last-child {
+        border-right: 1px solid #D4D4D4; }
+
+.content .imgline {
+  margin: 0 auto;
+  height: 7px;
+  background: url(../images/line.png); }
+
+.content .listbox {
+  background: #000; }
+  .content .listbox .product-list {
+    width: 1178px;
+    height: auto;
+    border-right: 1px solid #CCCCCC;
+    margin: 0 auto;
+    border-top: 1px solid #CCCCCC;
+    background: #FFFFFF;
+    border-bottom: 1px solid #CCCCCC; }
+    .content .listbox .product-list .prolist li {
+      width: 293px;
+      height: 438px;
+      border-left: 1px solid #CCCCCC;
+      border-bottom: 1px solid #CCCCCC;
+      float: left;
+      cursor: pointer;
+      box-sizing: border-box; }
