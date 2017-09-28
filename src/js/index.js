@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2017-09-23 16:25:24
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-09-27 09:48:43
+* @Last Modified time: 2017-09-28 14:55:58
 */
 require.config({
     // baseUrl:
@@ -135,7 +135,7 @@ require(['jquery','lcarousel'],function($){
             $next.css({'color':'#333','border':'1px solid #333'})
             $(this).css({'color':'#ccc','border':'1px solid #ccc'})
       })
-
+      
  
 });
 

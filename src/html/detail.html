@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>detailPage</title>
+    <title>listPage</title>
     <link rel="stylesheet" type="text/css" href="../css/base.css" />
     <link rel="stylesheet" type="text/css" href="../css/page_common.css" />
     <link rel="stylesheet" type="text/css" href="../css/detail.css" />
@@ -10,45 +10,48 @@
 <body>
     <div id="header"></div>
     <div class="content">
-        <div class="container">
+
             <div class="searchbox clearfix">
-                <div class="tit fl">
-                    "葡萄酒拉菲"有<strong>27</strong>条相关商品
-                </div>
-                <div class="hassel fl">
-                    <div class="hassel-tit fl">
-                        已选条件:
+                <div class="container">
+                    <div class="tit fl">
+                        "葡萄酒拉菲"有<strong>27</strong>条相关商品
                     </div>
-                    <a href="#" class="selected fl">
-                        葡萄酒&nbsp;<span>✖</span>
-                    </a>
-                     <a href="#" class="selected fl">
-                        拉菲&nbsp;<span>✖</span>
-                    </a>
-                </div>
-                <div class="cd fl">
-                    <div class="cd-tit fl">国家:</div>
-                    <ul class="cd-table fl">
-                        <li><a href="#">智利</a></li>
-                        <li><a href="#">阿根廷</a></li>
-                        <li><a href="#">法国</a></li>
-                    </ul>
-                </div>
-                <div class="cd fl">
-                    <div class="cd-tit fl">类型:</div>
-                     <ul class="cd-table fl">
-                        <li><a href="#">红葡萄酒</a></li>
-                    </ul>
-                </div>
-                <div class="gdxx fl">
-                    <div class="gdxx-tit fl">更多选项:</div>
-                    <div class="gdxx-table fl">
-                        <li>
-                            等级&nbsp;▼
-                        </li>
-                        <li>净含量&nbsp;▼</li>
-                        <li>价格&nbsp;▼</li>
+                    <div class="hassel fl">
+                        <div class="hassel-tit fl">
+                            已选条件:
+                        </div>
+                        <a href="#" class="selected fl">
+                            葡萄酒&nbsp;<span>✖</span>
+                        </a>
+                         <a href="#" class="selected fl">
+                            拉菲&nbsp;<span>✖</span>
+                        </a>
                     </div>
+                    <div class="cd fl">
+                        <div class="cd-tit fl">国家:</div>
+                        <ul class="cd-table fl">
+                            <li><a href="#">智利</a></li>
+                            <li><a href="#">阿根廷</a></li>
+                            <li><a href="#">法国</a></li>
+                        </ul>
+                    </div>
+                    <div class="cd fl">
+                        <div class="cd-tit fl">类型:</div>
+                         <ul class="cd-table fl">
+                            <li><a href="#">红葡萄酒</a></li>
+                        </ul>
+                    </div>
+                    <div class="gdxx fl">
+                        <div class="gdxx-tit fl">更多选项:</div>
+                        <div class="gdxx-table fl">
+                            <li>
+                                等级&nbsp;▼
+                            </li>
+                            <li>净含量&nbsp;▼</li>
+                            <li>价格&nbsp;▼</li>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             
@@ -56,14 +59,122 @@
 
             <!-- 商品列表 -->
             <div class="listbox">
+                <div class="container">
+                    
                     <div class="listbox-main">
-                        
+                        <div class="list-sort">
+                            <span class="fl">排序 : </span>
+                            <div class="sort-box fl">
+                                <a href="#" class="selected">综合</a>
+                                <a href="#">销量</a>
+                                <a href="#">价格</a>
+                                <a href="#">评价数</a>
+                                <a href="#">上新时间</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="product-list">
                         <ul class="prolist clearfix"></ul>
                     </div>
+
+                    <div class="pagesss">
+                        <div class="pagenumbox">
+                            <a href="#"><</a>
+                            <span class="curr_page">1</span>
+                            <a href="#">></a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
+            <!-- 推荐 -->
+            <div class="commendlist">
+                <span>大家都在买</span>
+            </div>
+            <div class="product-list">
+                <div class="container">
+                    
+                <ul class="prolist clearfix">
+                    <li class="proitem">
+                        <a href="#" class="proitem_a">
+                            <div class="itpic">
+                                <img src="../images/lf28.jpg" height="230" width="230" alt="" />
+                                <img src="../images/lf-28.jpg" class="move" alt="" />
+                            </div>
+                            <span class="itemname">法国 拉菲 奥西耶红 红葡萄酒 750ml</span>
+                            <span class="itemprice"><strong>￥</strong>39.9</span>
+                            <span class="addshopcar">加入购物车</span>
+                            <span class="assnum">
+                                评价 : 3条
+                            </span>
+                        </a>
+                    </li>
+                    <li class="proitem">
+                        <a href="#" class="proitem_a">
+                            <div class="itpic">
+                                <img src="../images/lf29.jpg" alt="" />
+                                <img src="../images/lf-29.jpg" class="move" alt="" />
+                            </div>
+                             <span class="itemname">澳大利亚 奔富 BIN2 西拉子幕和怀特葡萄酒 750ml</span>
+                            <span class="itemprice"><strong>￥</strong>39.9</span>
+                            <span class="addshopcar">加入购物车</span>
+                            <span class="assnum">
+                                评价 : 3条
+                            </span>
+                        </a>
+                    </li>
+                    <li class="proitem">
+                        <a href="#" class="proitem_a">
+                            <div class="itpic">
+                                <img src="../images/lf30.jpg" alt="" />
+                                <img src="../images/lf-30.jpg"  class="move"alt="" />
+                            </div>
+                             <span class="itemname">澳大利亚 黄尾袋鼠 莫斯卡特 白葡萄酒 750ml</span>
+                            <span class="itemprice"><strong>￥</strong>39.9</span>
+                            <span class="addshopcar">加入购物车</span>
+                            <span class="assnum">
+                                评价 : 3条
+                            </span>
+                        </a>
+                    </li>
+                    <li class="proitem">
+                        <a href="#" class="proitem_a">
+                            <div class="itpic">
+                                <img src="../images/lf31.jpg" alt="" />
+                                <img src="../images/lf-31.jpg"  class="move"alt="" />
+                            </div>
+                            <span class="itemname">法比纳古堡 皇族雄狮 公爵干红葡萄酒 750ml</span>
+                            <span class="itemprice"><strong>￥</strong>39.9</span>
+                            <span class="addshopcar">加入购物车</span>
+                            <span class="assnum">
+                                评价 : 3条
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="fixnav">
+                <div class="fixnavbox">
+                    <a href="#"><img src="../images/logo1.jpg"  /></a>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">特卖会</a></li>
+                        <li><a href="#">进口馆</a></li>
+                        <li><a href="#">商家采销</a></li>
+                        <li><a href="#">高端收藏</a></li>
+                        <li><a href="#">购酒主推</a></li>
+                        <li><a href="#">尾货直销</a></li>
+                    </ul>
+                    <a href="#">
+                        <img src="../images/navshopcar.png" />   
+                        <span>购物车</span>
+                        <em>0</em>
+                    </a>
+                </div>
+            </div>
+        
     </div>
     <div id="footer"></div>
 </body>

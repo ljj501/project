@@ -2,11 +2,11 @@
 * @Author: Marte
 * @Date:   2017-09-25 20:12:31
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-09-27 16:35:23
+* @Last Modified time: 2017-09-28 09:45:57
 */
 
 (function($){
-   
+  
    setTimeout(function(){
         //底部滚动
         var $ul =  $('#footer .copyright .box ul');
@@ -20,6 +20,7 @@
             $ul.animate({top:-36*i})
 
         },2000)
+
     
          //右侧固定栏淡入淡出
         $('#footer .rightFixedBar').on('mouseenter','a',function(){
@@ -58,6 +59,7 @@
        //返回顶部
       
        $('#footer .rightFixedBar .to-top').on('click',function(){
+    
             let speed = 10;
             let timer = setInterval(()=>{
                         
