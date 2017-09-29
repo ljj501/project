@@ -31,7 +31,10 @@ body{
     visibility:hidden;
     zoom:1;
 }
-
+.w990{
+  width:990px;
+  margin:0 auto;
+}
 /*右侧fixed*/
 @font-face {font-family: "iconfont";
   src: url('index_font/iconfont.eot?t=1506324232762'); /* IE9*/

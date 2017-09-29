@@ -47,8 +47,66 @@ require(['jquery','common','require_common'],function($,common,require_common){
             var $pit = $('<img/>').attr({src:obj.imgurl});
             var $bpit = $pit.clone(true).addClass('none');
             $('.picshowbox .itempicshow').append($pit,$bpit);
-                    }
+            //商品信息
+            var $itemtitle = $('<h3/>').html(obj.title).addClass('itemtitle');
+            var $redad = $('<p/>').addClass('redad').html('酒友钟爱 大家共享.独特享受 美不胜言');
+            $('.itemshow .itemmsg').prepend($itemtitle,$redad);
+            
+            var $strong = $('<strong/>');
+            var $rmbIcon = $('<span/>').addClass('rmbIcon').html('¥');
+            var $price = $('<span/>').addClass('price').html(obj.price);
+            $strong.append($rmbIcon,$price);
+
+            $('.priceBox .newPrice').append($strong);
+
+            var $gzd = $('<p/>').html('累积评价&nbsp;');
+            var $em = $('<em/>').html(obj.pj_qty);
+            $gzd.append($em);
+            $('.upmsg .pay').append($gzd);
+        }
 
    })
+    //点击按钮数量加1或减1
+    var $num = $('.numbox .nums');
+    var num = $num.attr('value');
+    $('.addBtn .add').on('click',function(){
+        num++;
+        $num.attr('value',num);
+    });
+    $('.addBtn .diff').on('click',function(){
+        num--;
+        if(num<1){
+            num = 1;
+            $('.alert').css({'display':'block'});
+            setTimeout(function(){
+                
+                $('.alert').css({'display':'none'})
+            },2000)
+        }
+        $num.attr('value',num);
+    })
 
+    //商品飞入购物车
+    $('.addToCart').on('click',function(){
+        var $img = $('.itempicshow').children().first();
+        var $copyimg = $img.clone();
+        var $box = $('<div/>').css({'width':40,'height':40,'border-radius':'50%','overflow':'hidden','text-align':'center'}).append($copyimg)
+        $box.css({'position':'absolute','top':20,'left':260})
+        $(this).append($box);
+        target_top = $box.offset().top-$('.car').offset().top;
+        target_left = $('.car').offset().left-$box.offset().left;
+        var target = {
+            top:35-target_top,
+            left:target_left+250
+        }
+        $box.animate(target,1000,function(){
+            $('.addToCart').empty()
+        })
+        //,存入cookie
+        var $sp_qty = $('.numbox .nums').attr('value');
+        var date = new Date();
+        date.setDate(date.getDate()+7);
+        document.cookie = 'id='+id+';expires='+date.toString();
+        document.cookie = 'qty='+$sp_qty;
+    })
 })
