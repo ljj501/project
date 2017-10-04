@@ -74,6 +74,8 @@
     height: auto;
     margin: 0 auto;
     width: 960px;
+    font-size:13px;
+    font-family: Arial;
     .cart_title{
         height: 45px;
         margin-top: 15px;
@@ -97,6 +99,9 @@
             margin: 0;
             padding-left: 10px;
             padding-top: 22px;
+            b{
+                    color: #CA0808;
+            }
         }
         .cbtn{
             background: url(../images/bg_new.gif) no-repeat 0 0;
@@ -109,6 +114,105 @@
             background-position: 0 -102px;
             height: 35px;
             width: 124px;
+        }
+    }
+
+    .mainCar{
+
+        .car_box{
+            border-color: #C90809 #EAEAEA #EAEAEA;
+            border-right: 1px solid #EAEAEA;
+            border-style: solid;
+            border-width: 2px 1px 1px;
+            height: auto;
+            
+            dt{
+                border-bottom: 1px solid #EAEAEA;
+                color: #999999;
+                height: 31px;
+                line-height: 31px;
+                overflow: hidden;
+                padding: 0;
+                text-align: center;
+                span{
+                    float:left;
+                    display:inline-block;
+                    width:113px;
+                    input{
+                            vertical-align: middle;
+                    }
+                }
+                .check_all{text-align:left;}
+                .r1{width:315px; text-align:left;}
+                .r2{width:80px;}
+                .r3{width:86px;}
+                .r4{width:150px;}
+                .r5{width:70px;}
+                .r6{width:142px;}
+            }
+        }
+        .car_goods{
+            .tbcart{
+                border-bottom: 1px dotted #D3D3D3;
+                font-family: Arial;
+                width: 100%;
+                tr{
+                    text-align:center;
+                    td{
+                        padding: 10px 0;
+                        cursor: pointer;
+                        &:nth-child(1){
+                            width: 48px;
+                            text-align: left;
+                        }
+                        &:nth-child(2){
+                            position: relative;
+                            width: 65px;
+                            text-align: center;
+
+                        }
+                        &:nth-child(3){
+                            width: 313px;
+                            text-align: left;
+                        }
+                        &:nth-child(4){
+                            width: 70px;
+                        }
+                        &:nth-child(5){
+                            width: 88px;
+                            color: #cf0404;
+                        }
+                        &:nth-child(6){
+                            width: 115px;
+                            padding-left:34px;
+                            span{
+                                
+                                height: 20px;
+                                line-height: 20px;
+                                white-space: nowrap;
+                                border: 1px solid #D8D8D8;
+                                cursor: pointer;
+                                // margin-left: 22px;
+                                width: 15px;
+                                float:left;
+                            }
+                            input{
+                                border: 1px solid #D8D8D8;
+                                color: #666666;
+                                height: 18px;
+                                margin: 0 3px;
+                                text-align: center;
+                                width: 35px;
+                                float:left;
+                            }
+                        }
+                        &:nth-child(7){
+                            width:70px;
+                        }
+                        // &:nth-child(8){}
+                    }
+                }
+            }
         }
     }
 }

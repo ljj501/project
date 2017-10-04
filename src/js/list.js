@@ -16,7 +16,7 @@ require(['jquery','common','require_common'],function($,common,require_common){
    $('#header').load('../html/_header.html');
     $('#footer').load('../html/_footer.html');
    var href = location.href;
-   var id = href.slice(-1)
+   var id = href.slice(-1);
    //发起ajax请求
    require_common.ajax({
         type:'get',
@@ -25,6 +25,8 @@ require(['jquery','common','require_common'],function($,common,require_common){
             var obj = data[0];
             //左边小图
             var $span = $('<span/>').html(obj.title);
+            title = obj.title;
+
             var $zxkf = $('<a/>').addClass('zxkf').addClass('fr');
             $('.buybox .category').append($span,$zxkf);
 
@@ -63,6 +65,54 @@ require(['jquery','common','require_common'],function($,common,require_common){
             var $em = $('<em/>').html(obj.pj_qty);
             $gzd.append($em);
             $('.upmsg .pay').append($gzd);
+
+            //商品飞入购物车
+            $('.addToCart').on('click',function(){
+                var $img = $('.itempicshow').children().first();
+                var $copyimg = $img.clone();
+                var $box = $('<div/>').css({'width':40,'height':40,'border-radius':'50%','overflow':'hidden','text-align':'center'}).append($copyimg)
+                $box.css({'position':'absolute','top':20,'left':260})
+                $(this).append($box);
+                target_top = $box.offset().top-$('.car').offset().top;
+                target_left = $('.car').offset().left-$box.offset().left;
+                var target = {
+                    top:35-target_top,
+                    left:target_left+250
+                }
+                $box.animate(target,1000,function(){
+                    $('.addToCart').empty()
+                })
+                //,存入cookie
+                var $sp_qty = $('.numbox .nums').attr('value');
+                var has = false;
+                for(var i=0;i<carlist.length;i++){
+                    // 已经存在
+                    if(carlist[i].id === id){
+                        carlist[i].qty = Number(carlist[i].qty)+Number($sp_qty)
+                        has=true;
+                        break;
+                    }
+                }
+                        // 不存在
+                if(!has){
+                    var goods = {
+                        id:id,
+                        qty:$sp_qty,
+                        title:obj.title,
+                        price:obj.price,
+                        imgurl:obj.imgurl
+                    }
+
+                    carlist.push(goods)
+                }
+
+
+                // 写入cookie
+                var date = new Date();
+                date.setDate(date.getDate()+15);
+                document.cookie = 'carlist=' + JSON.stringify(carlist) + ';expires=' + date.toUTCString();
+             
+            })
         }
 
    })
@@ -86,27 +136,17 @@ require(['jquery','common','require_common'],function($,common,require_common){
         $num.attr('value',num);
     })
 
-    //商品飞入购物车
-    $('.addToCart').on('click',function(){
-        var $img = $('.itempicshow').children().first();
-        var $copyimg = $img.clone();
-        var $box = $('<div/>').css({'width':40,'height':40,'border-radius':'50%','overflow':'hidden','text-align':'center'}).append($copyimg)
-        $box.css({'position':'absolute','top':20,'left':260})
-        $(this).append($box);
-        target_top = $box.offset().top-$('.car').offset().top;
-        target_left = $('.car').offset().left-$box.offset().left;
-        var target = {
-            top:35-target_top,
-            left:target_left+250
+    //进入页面前先获取之前的cookie值
+        var carlist = [];
+        var cookies = document.cookie;
+        if(cookies.length>0){
+            cookies = cookies.split('; ');
+            cookies.forEach(function(cookie){
+                var temp = cookie.split('=');
+                if(temp[0] === 'carlist'){
+                    carlist = JSON.parse(temp[1]);
+                }
+            })
         }
-        $box.animate(target,1000,function(){
-            $('.addToCart').empty()
-        })
-        //,存入cookie
-        var $sp_qty = $('.numbox .nums').attr('value');
-        var date = new Date();
-        date.setDate(date.getDate()+7);
-        document.cookie = 'id='+id+';expires='+date.toString();
-        document.cookie = 'qty='+$sp_qty;
-    })
+
 })
