@@ -54,7 +54,7 @@ require(['jquery','require_common'],function($,require_common){
 
         var $delete = $('<a/>').html('删除');
         var $td_del = $('<td/>').append($delete);
-        $tr.append($td_check,$td_pit,$td_title,$td_price,$td_yh,$td_btn,$td_all,$td_del);
+        $tr.append($td_check,$td_pit,$td_title,$td_price,$td_yh,$td_btn,$td_all,$td_del );
         $table.append($tr);
         $table.appendTo($('.car_goods'))
     })
