@@ -90,6 +90,19 @@
           .content .mid .register_box .tabForm .formBox .register_inner .Auto {
             width: 350px;
             margin: 0 auto; }
+            .content .mid .register_box .tabForm .formBox .register_inner .Auto .codeBox .codebox {
+              margin-left: 10px;
+              height: 54px;
+              line-height: 54px;
+              width: 75px;
+              text-align: center;
+              background: #58bc58; }
+            .content .mid .register_box .tabForm .formBox .register_inner .Auto .codeBox a {
+              height: 54px;
+              line-height: 54px;
+              margin-left: 8px;
+              color: #325e8f;
+              cursor: pointer; }
             .content .mid .register_box .tabForm .formBox .register_inner .Auto .text_box {
               position: relative;
               margin-top: -1px;
@@ -97,6 +110,30 @@
               height: 52px;
               line-height: 52px;
               border: 1px solid #c5c5c5; }
+              .content .mid .register_box .tabForm .formBox .register_inner .Auto .text_box .error {
+                display: none;
+                position: absolute;
+                right: 10px;
+                bottom: 0;
+                color: #a94442;
+                height: 52px;
+                line-height: 52px; }
+                .content .mid .register_box .tabForm .formBox .register_inner .Auto .text_box .error .errorIcon {
+                  display: inline-block;
+                  margin-top: -3px;
+                  margin-right: 3px;
+                  width: 14px;
+                  height: 12px;
+                  vertical-align: middle;
+                  background: url(../images/loginIcon.gif) no-repeat -16px -22px; }
+              .content .mid .register_box .tabForm .formBox .register_inner .Auto .text_box .meetIcon {
+                display: none;
+                position: absolute;
+                right: 10px;
+                top: 19px;
+                width: 16px;
+                height: 13px;
+                background: url(../images/loginIcon.gif) no-repeat 0 -21px; }
               .content .mid .register_box .tabForm .formBox .register_inner .Auto .text_box label {
                 display: inline-block;
                 margin-left: 18px;
@@ -111,6 +148,10 @@
                 background: transparent;
                 vertical-align: middle;
                 text-indent: 20px; }
+            .content .mid .register_box .tabForm .formBox .register_inner .Auto .codeText_s {
+              width: 196px; }
+              .content .mid .register_box .tabForm .formBox .register_inner .Auto .codeText_s input {
+                width: 115px; }
             .content .mid .register_box .tabForm .formBox .register_inner .Auto .margin-top12 {
               margin-top: 12px; }
             .content .mid .register_box .tabForm .formBox .register_inner .Auto .xieyi {

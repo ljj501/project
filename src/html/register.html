@@ -39,26 +39,34 @@
                                 <div class="text_box">
                                     <label for="mob">手机号 : </label>
                                         <input type="text" id="mob" name="mob" class="phone" />
+                                        <strong class="error"><b class="errorIcon"></b>请输入正确手机号</strong>
+                                        <strong class="meetIcon"></strong>
                                 </div>
                                 <div class="text_box margin-top12">
                                     <label for="password1">设置密码 : </label>
                                     <input type="password" id="password1" name="password1" placeholder="6-20个非空格字符" class="phonePwd" />
+                                    <strong class="error"><b class="errorIcon"></b>请输入正确密码格式</strong>
+                                    <strong class="meetIcon"></strong>
                                 </div>
                                 <div class="text_box">
                                     <label for="password2">确认密码 : </label>
                                     <input type="password" id="password2" name="password2" class="phonePwd" />
+                                    <strong class="error"><b class="errorIcon"></b>请输入相同的密码</strong>
+                                    <strong class="meetIcon"></strong>
                                 </div>
                                 <div class="codeBox margin-top12 clearfix">
                                     <div class="text_box fl codeText_s">
                                         <label for="">验证码 : </label>
-                                        <input type="text" placeholder="输入图片验证码" />
+                                        <input class="ecode"type="text" placeholder="输入图片验证码" />
                                     </div>
+                                    <div class="codebox fl"></div>
+                                    <a class="fl change">换一张</a>
                                 </div>
                                 <p class="xieyi">
                                     点击注册,表示您同意购酒网
                                     <a href="#" class="blue">《服务协议》</a>
                                 </p>
-                                <button class="regBtn">注&nbsp;册</button>
+                                <button class="regBtn" type="button">注&nbsp;册</button>
                             </div>
                         </form>
                 </div>
@@ -80,4 +88,5 @@
         <div>Copyright©2009-2013 gjw.com, All Rights Reserved 购酒网(上海)供应链管理有限公司 版权所有</div>
     </div>
 </body>
+<script src="../lib/require.js" data-main="../js/register.js"type="text/javascript"></script>
 </html>

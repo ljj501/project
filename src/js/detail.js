@@ -71,4 +71,24 @@ require(['jquery','common','require_common'],function($,common,require_common){
         }
     })
 
+    //购物车的商品数量
+        var all= 0;
+        var carlist = [];
+        var cookies = document.cookie;
+        if(cookies.length>0){
+            cookies = cookies.split('; ');
+            cookies.forEach(function(cookie){
+                var temp = cookie.split('=');
+                if(temp[0] === 'carlist'){
+                    carlist = JSON.parse(temp[1]);
+                }
+            })
+        }
+        carlist.forEach(function(obj){
+            console.log(obj.qty)
+            all += Number(obj.qty);
+        })
+        setTimeout(function(){
+            $('.itemNum').html(all)
+        }, 300)
 })

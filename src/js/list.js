@@ -137,6 +137,8 @@ require(['jquery','common','require_common'],function($,common,require_common){
     })
 
     //进入页面前先获取之前的cookie值
+    //购物车中的商品数量
+        var all= 0;
         var carlist = [];
         var cookies = document.cookie;
         if(cookies.length>0){
@@ -148,5 +150,11 @@ require(['jquery','common','require_common'],function($,common,require_common){
                 }
             })
         }
-
+        carlist.forEach(function(obj){
+            console.log(obj.qty)
+            all += Number(obj.qty);
+        })
+        setTimeout(function(){
+            $('.itemNum').html(all)
+        }, 300)
 })

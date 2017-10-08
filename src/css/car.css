@@ -197,6 +197,8 @@
               float: left; }
           .global_body .mainCar .car_goods .tbcart tr td:nth-child(7) {
             width: 70px; }
+            .global_body .mainCar .car_goods .tbcart tr td:nth-child(7) b {
+              color: #CA0809; }
   .global_body .mainCar .cart_info {
     background-color: #FFFFFF;
     border-color: #EAEAEA #EAEAEA;
@@ -263,3 +265,108 @@
       padding-left: 20px;
       margin-left: 15px;
       line-height: 35px; }
+  .global_body .needmore dt {
+    background-color: #F8F8F8;
+    border: 1px solid #EAEAEA;
+    height: 38px; }
+    .global_body .needmore dt span {
+      color: #999999;
+      float: left;
+      font-family: "微软雅黑","黑体";
+      font-size: 18px;
+      font-weight: bold;
+      height: 22px;
+      line-height: 22px;
+      margin: 9px 0 0 15px;
+      width: 143px; }
+  .global_body .needmore dd {
+    background-color: #FFFFFF;
+    border-color: #EAEAEA #EAEAEA;
+    border-right: 1px solid #EAEAEA;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    height: auto;
+    overflow: hidden;
+    padding: 20px 0; }
+    .global_body .needmore dd ul {
+      border-left: 1px dotted #EAEAEA;
+      color: #666666;
+      float: left;
+      height: auto;
+      left: -1px;
+      line-height: 25px;
+      padding-bottom: 20px;
+      position: relative;
+      text-align: center;
+      width: 158px;
+      margin-bottom: 5px; }
+      .global_body .needmore dd ul .goods_pic {
+        padding-bottom: 5px;
+        text-align: center;
+        width: 158px;
+        height: 105px; }
+      .global_body .needmore dd ul .goods_name {
+        line-height: 20px;
+        height: 40px;
+        overflow: hidden;
+        padding: 0 10px 0 12px; }
+        .global_body .needmore dd ul .goods_name a {
+          color: #666666; }
+      .global_body .needmore dd ul .goods_price {
+        line-height: 20px;
+        font-family: Arial;
+        color: #C90809;
+        margin-top: 5px; }
+      .global_body .needmore dd ul .goods_btn {
+        margin-left: 28px;
+        margin-top: 10px; }
+        .global_body .needmore dd ul .goods_btn .cbtn {
+          background: url(../images/bg_new.gif) no-repeat 0 0;
+          border: medium none;
+          cursor: pointer;
+          display: block;
+          overflow: hidden;
+          text-align: center;
+          line-height: 20px; }
+        .global_body .needmore dd ul .goods_btn .putin_btn {
+          background-position: -262px -209px;
+          height: 29px;
+          width: 102px; }
+
+.foot {
+  background-color: #FAFAFA;
+  height: auto;
+  margin: 20px auto 0;
+  padding-top: 20px;
+  width: 960px;
+  font-size: 12px; }
+  .foot .links {
+    color: #999999;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center; }
+    .foot .links a {
+      color: #999999; }
+      .foot .links a:hover {
+        color: red; }
+    .foot .links span {
+      padding: 0 10px; }
+  .foot .copyright {
+    color: #999999;
+    line-height: 22px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    text-align: center; }
+  .foot .what {
+    text-align: center; }
+    .foot .what a {
+      display: inline-block;
+      border: 1px solid #ccc;
+      width: 108px;
+      margin: 0 5px;
+      height: 40px;
+      background: url(../images/bg_index.png) no-repeat;
+      background-position: -205px -735px; }
