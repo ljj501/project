@@ -115,7 +115,10 @@ require(['jquery','common','require_common'],function($,common,require_common){
             })
         }
 
-   })
+   });
+    //hover小图加边框换大图
+    console.log($('.itempicshow').firstChild)
+
     //点击按钮数量加1或减1
     var $num = $('.numbox .nums');
     var num = $num.attr('value');
@@ -151,10 +154,9 @@ require(['jquery','common','require_common'],function($,common,require_common){
             })
         }
         carlist.forEach(function(obj){
-            console.log(obj.qty)
             all += Number(obj.qty);
         })
         setTimeout(function(){
             $('.itemNum').html(all)
         }, 300)
-})
+});

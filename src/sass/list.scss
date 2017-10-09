@@ -37,6 +37,10 @@
                         border: 1px solid #EEEEEE;
                         cursor: pointer;
                         padding: 1px 1px;
+                        &:hover{
+                            border: 2px solid #DC3334;
+                            padding: 0 0;
+                        }
                         img{
                             vertical-align: top;
                             width: 72px;

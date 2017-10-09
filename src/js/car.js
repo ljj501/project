@@ -32,7 +32,7 @@ require(['jquery','require_common'],function($,require_common){
             var $table = $('<table/>').addClass('tbcart');
             var $tr = $('<tr/>').addClass(obj.id)
 
-            var $checkbox = $('<input/>').attr({type:'checkbox'})
+            var $checkbox = $('<input/>').attr({type:'checkbox'}).addClass('gou');
             var $td_check = $('<td/>').append($checkbox);
 
             var $img = $('<img/>').attr({src:obj.imgurl}).css({height:50})
@@ -50,10 +50,10 @@ require(['jquery','require_common'],function($,require_common){
             var $jia = $('<span/>').html('+').addClass('jia');
             var $td_btn = $('<td/>').append($jian,$num,$jia);
 
-            var $all = $('<b/>').html('¥'+obj.price*obj.qty);
+            var $all = $('<b/>').html('¥'+obj.price*obj.qty).addClass('price');
             var $td_all = $('<td/>').append($all);
 
-            var $delete = $('<a/>').html('删除');
+            var $delete = $('<a/>').html('删除').addClass('delBtn');
             var $td_del = $('<td/>').append($delete);
             $tr.append($td_check,$td_pit,$td_title,$td_price,$td_yh,$td_btn,$td_all,$td_del );
             $table.append($tr);
@@ -105,5 +105,35 @@ require(['jquery','require_common'],function($,require_common){
         document.cookie = 'carlist=' + JSON.stringify(carlist) + ';expires=' + date.toUTCString();
         $('.car_goods').html('');
         showcar();
+    })
+    //全选
+    var status = true;
+    var $checkbox = $('.tbcart .gou');
+    $('.check_ll').on('click',function(){
+        $checkbox.prop('checked',this.checked)
+        $('.check_ll').prop('checked',this.checked)
+    })
+
+    var All = 0;
+    $checkbox.on('click',function(){
+        //过滤出已经被选中的复选框
+        var $checkedbox = $checkbox.filter(':checked');
+        console.log($checkedbox)
+        $('.check_ll').prop('checked',$checkedbox.length === $checkbox.length);
+    })
+    console.log(carlist)
+    //删除购物车商品
+    $('.delBtn').on('click',function(){
+        $(this).parent().parent().css({'display':'none'})
+        var id = $(this).parent().parent().attr('class');
+        for(var i=0;i<carlist.length;i++){
+            if(carlist[i].id === id){
+                //删除第i行 仅此1行
+                carlist.splice(i,1);
+            }
+        }
+        var date = new Date();
+        date.setDate(date.getDate()+15);
+        document.cookie = 'carlist=' + JSON.stringify(carlist) + ';expires=' + date.toUTCString();
     })
 })
